@@ -1,21 +1,15 @@
-import { json, urlencoded } from "body-parser";
-import express, { type Express } from "express";
-import morgan from "morgan";
-import cors from "cors";
+import { Hono } from "hono";
+import { cors } from "hono/cors";
 
-export const createServer = (): Express => {
-  const app = express();
-  app
-    .disable("x-powered-by")
-    .use(morgan("dev"))
-    .use(urlencoded({ extended: true }))
-    .use(json())
-    .use(cors())
-    .get("/message/:name", (req, res) => {
-      return res.json({ message: `hello ${req.params.name}` });
+// eslint-disable-next-line @typescript-eslint/explicit-function-return-type -- Take advantage of the Hono's type inferencing for routes
+export const createServer = () => {
+  const app = new Hono()
+    .use("/*", cors())
+    .get("/message/:name", (c) => {
+      return c.json({ message: `hello ${c.req.param("name")}` });
     })
-    .get("/status", (_, res) => {
-      return res.json({ ok: true });
+    .get("/status", (c) => {
+      return c.json({ ok: true });
     });
 
   return app;
