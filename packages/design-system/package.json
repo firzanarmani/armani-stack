@@ -29,6 +29,7 @@
     "@repo/jest-presets": "workspace:*",
     "@repo/styled-system": "workspace:^",
     "@repo/typescript-config": "workspace:*",
+    "@tanstack/react-router": "^1.46.6",
     "@types/jest": "^29.5.12",
     "@types/node": "^22.0.2",
     "@types/react": "^18.3.3",

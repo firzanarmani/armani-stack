@@ -10,7 +10,7 @@ const app = createServer();
 serve({
   fetch: app.fetch,
 }).listen({ port }, () => {
-  log(`api running on ${port}`);
+  log(`api running on ${port.toString()}`);
 });
 
 export type AppType = typeof app;

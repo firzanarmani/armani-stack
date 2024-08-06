@@ -1,25 +1,20 @@
-import type { AnchorHTMLAttributes, ReactNode } from "react";
-
-interface LinkProps extends AnchorHTMLAttributes<HTMLAnchorElement> {
-  children: ReactNode;
-  newTab?: boolean;
-  href: string;
-}
+import { Link as RouterLink, type LinkProps } from "@tanstack/react-router";
 
 export function Link({
   children,
-  href,
+  to,
   newTab,
   ...other
-}: LinkProps): JSX.Element {
+}: LinkProps & { newTab?: boolean }): JSX.Element {
   return (
-    <a
-      href={href}
+    <RouterLink
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment -- Temporarily disabled until working solution found
+      to={to}
       rel={newTab ? "noreferrer" : undefined}
       target={newTab ? "_blank" : undefined}
       {...other}
     >
       {children}
-    </a>
+    </RouterLink>
   );
 }

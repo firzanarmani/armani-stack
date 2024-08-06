@@ -4,7 +4,12 @@ export default defineConfig((options: Options) => ({
   entry: ["./src/index.tsx"],
   format: ["cjs", "esm"],
   dts: true,
-  external: ["react", "@repo/styled-system"],
+  external: [
+    "react",
+    "react-dom",
+    "@tanstack/react-router",
+    "@repo/styled-system",
+  ],
   banner: {
     js: "'use client'",
   },
