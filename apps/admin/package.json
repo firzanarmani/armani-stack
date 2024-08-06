@@ -3,6 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
+    "prepare": "npm run ui:codegen",
+    "ui:codegen": "panda codegen",
     "build": "vite build",
     "clean": "rm -rf dist",
     "dev": "vite --host 0.0.0.0 --port 3001 --clearScreen false",
@@ -10,16 +12,18 @@
     "lint": "eslint src/"
   },
   "dependencies": {
+    "@repo/design-system": "workspace:*",
+    "@repo/styled-system": "workspace:^",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "@repo/ui": "workspace:*"
+    "react-dom": "^18.3.1"
   },
   "devDependencies": {
+    "@pandacss/dev": "^0.44.0",
+    "@repo/eslint-config": "workspace:*",
+    "@repo/typescript-config": "workspace:*",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
     "@vitejs/plugin-react": "^4.3.1",
-    "@repo/eslint-config": "workspace:*",
-    "@repo/typescript-config": "workspace:*",
     "typescript": "^5.5.4",
     "vite": "^5.3.5"
   }

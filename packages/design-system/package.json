@@ -1,5 +1,5 @@
 {
-  "name": "@repo/ui",
+  "name": "@repo/design-system",
   "version": "0.0.0",
   "private": true,
   "license": "MIT",
@@ -11,6 +11,8 @@
     "dist/**"
   ],
   "scripts": {
+    "prepare": "npm run codegen",
+    "codegen": "panda codegen",
     "build": "tsup",
     "clean": "rm -rf dist",
     "dev": "tsup --watch",
@@ -22,8 +24,10 @@
     "preset": "@repo/jest-presets/browser"
   },
   "devDependencies": {
+    "@pandacss/dev": "^0.44.0",
     "@repo/eslint-config": "workspace:*",
     "@repo/jest-presets": "workspace:*",
+    "@repo/styled-system": "workspace:^",
     "@repo/typescript-config": "workspace:*",
     "@types/jest": "^29.5.12",
     "@types/node": "^22.0.2",

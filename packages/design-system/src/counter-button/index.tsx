@@ -1,27 +1,27 @@
-"use client";
-
 import { useState } from "react";
+import { css } from "@repo/styled-system/css";
 
 export function CounterButton(): JSX.Element {
   const [count, setCount] = useState(0);
 
   return (
     <div
-      style={{
-        background: `rgba(0,0,0,0.05)`,
-        borderRadius: `8px`,
-        padding: "1.5rem",
-        fontWeight: 500,
-      }}
+      className={css({
+        background: "rgba(0,0,0,0.05)",
+        borderRadius: "lg",
+        padding: "6",
+        fontWeight: "medium",
+      })}
     >
-      <p style={{ margin: "0 0 1.5rem 0" }}>
+      <p className={css({ marginBottom: "6" })}>
         This component is from{" "}
         <code
-          style={{
-            padding: "0.2rem 0.3rem",
-            background: `rgba(0,0,0,0.1)`,
-            borderRadius: "0.25rem",
-          }}
+          className={css({
+            paddingY: "0.2rem",
+            paddingX: "0.3rem",
+            background: "rgba(0,0,0,0.1)",
+            borderRadius: "sm",
+          })}
         >
           ui
         </code>
@@ -31,15 +31,16 @@ export function CounterButton(): JSX.Element {
           onClick={() => {
             setCount((c) => c + 1);
           }}
-          style={{
+          className={css({
             background: "black",
             color: "white",
             border: "none",
-            padding: "0.5rem 1rem",
-            borderRadius: "0.25rem",
+            paddingX: "4",
+            paddingY: "2",
+            borderRadius: "sm",
             display: "inline-block",
             cursor: "pointer",
-          }}
+          })}
           type="button"
         >
           Count: {count}

@@ -2,8 +2,9 @@
   "extends": "@repo/typescript-config/react-library.json",
   "compilerOptions": {
     "lib": ["dom", "ES2015"],
-    "types": ["jest", "node"]
+    "types": ["jest", "node"],
+    "allowJs": true
   },
   "include": ["."],
-  "exclude": ["dist", "build", "node_modules"]
+  "exclude": ["dist", "build", "node_modules", "../styled-system"]
 }
