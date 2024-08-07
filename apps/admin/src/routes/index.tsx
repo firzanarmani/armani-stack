@@ -24,7 +24,7 @@ function Index(): JSX.Element {
 
   return (
     <div className={container({ padding: "10" })}>
-      <h1 className={css({ fontSize: "3rem", fontWeight: "700", margin: "0" })}>
+      <h1 className={css({ fontSize: "5xl", fontWeight: "bold", margin: "0" })}>
         Admin <br />
         <span
           className={css({
@@ -40,8 +40,10 @@ function Index(): JSX.Element {
         </span>
       </h1>
       <CounterButton />
-      <p>{`API status is ${status.ok ? "" : "not"} ok!`}</p>
-      <p className={css({ color: "#9ca3af", fontWeight: "500" })}>
+      <p
+        className={css({ color: "black", fontWeight: "medium" })}
+      >{`API status is ${status.ok ? "" : "not"} ok!`}</p>
+      <p className={css({ color: "#9ca3af", fontWeight: "medium" })}>
         Built With{" "}
         <Link to="https://turbo.build/repo" newTab>
           <span
