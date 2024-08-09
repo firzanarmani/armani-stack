@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { css } from "@repo/styled-system/css";
+import { Button } from "../primitives/button";
 
 export function CounterButton(): JSX.Element {
   const [count, setCount] = useState(0);
@@ -27,7 +28,7 @@ export function CounterButton(): JSX.Element {
         </code>
       </p>
       <div>
-        <button
+        <Button
           onClick={() => {
             setCount((c) => c + 1);
           }}
@@ -35,16 +36,11 @@ export function CounterButton(): JSX.Element {
             background: "black",
             color: "white",
             border: "none",
-            paddingX: "4",
-            paddingY: "2",
-            borderRadius: "sm",
-            display: "inline-block",
-            cursor: "pointer",
           })}
           type="button"
         >
           Count: {count}
-        </button>
+        </Button>
       </div>
     </div>
   );

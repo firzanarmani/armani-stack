@@ -5,6 +5,6 @@
     "types": ["jest", "node"],
     "allowJs": true
   },
-  "include": ["."],
-  "exclude": ["dist", "build", "node_modules", "../styled-system"]
+  "include": [".", "../../packages/styled-system"],
+  "exclude": ["dist", "build", "node_modules"]
 }
