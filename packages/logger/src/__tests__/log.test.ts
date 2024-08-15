@@ -1,11 +1,12 @@
 import { log } from "..";
+import { vi, describe, it, expect } from "vitest";
 
-jest.spyOn(global.console, "log");
+vi.spyOn(global.console, "log");
 
 describe("@repo/logger", () => {
   it("prints a message", () => {
-    log("hello");
+    log("hello1");
     // eslint-disable-next-line no-console -- testing console
-    expect(console.log).toBeCalledWith("LOGGER: ", "hello");
+    expect(console.log).toHaveBeenCalledWith("LOGGER: ", "hello1");
   });
 });

@@ -28,7 +28,8 @@ module.exports = {
   ],
   overrides: [
     {
-      files: ["*.js?(x)", "*.ts?(x)"],
+      files: ["**/__tests__/**/*.[jt]s?(x)", "**/?(*.)+(spec|test).[jt]s?(x)"],
+      extends: [require.resolve("@vercel/style-guide/eslint/vitest")],
     },
   ],
 };

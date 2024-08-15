@@ -1,4 +1,5 @@
 import { createRoot } from "react-dom/client";
+import { describe, it } from "vitest";
 import { Link } from ".";
 
 describe("Link", () => {

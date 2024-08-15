@@ -1,8 +1,9 @@
 import supertest from "supertest";
+import { describe, it, expect } from "vitest";
 import { createAdaptorServer } from "@hono/node-server";
 import { createServer } from "../server";
 
-describe("Server", () => {
+describe("server", () => {
   it("health check returns 200", async () => {
     await supertest(createAdaptorServer(createServer()))
       .get("/status")
