@@ -4,28 +4,34 @@
   "private": true,
   "types": "./src/index.ts",
   "scripts": {
-    "start": "node dist/index.js",
-    "dev": "tsup --watch --onSuccess \"node dist/index.js\"",
-    "build": "tsup",
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
     "clean": "rm -rf dist",
     "typecheck": "tsc --noEmit",
     "lint": "eslint src/",
     "test": "vitest run",
-    "test:watch": "vitest"
+    "test:watch": "vitest",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "wrangler d1 migrations apply repo-db"
   },
   "dependencies": {
-    "@hono/node-server": "^1.12.0",
+    "@hono/zod-validator": "^0.2.2",
     "@repo/logger": "workspace:*",
-    "hono": "^4.5.3"
+    "drizzle-orm": "^0.33.0",
+    "drizzle-zod": "^0.5.1",
+    "hono": "^4.5.3",
+    "zod": "^3.23.8"
   },
   "devDependencies": {
+    "@cloudflare/workers-types": "^4.20240806.0",
     "@repo/eslint-config": "workspace:*",
     "@repo/typescript-config": "workspace:*",
     "@types/node": "^22.0.2",
     "@types/supertest": "^6.0.2",
+    "drizzle-kit": "^0.24.0",
     "supertest": "^7.0.0",
-    "tsup": "^8.2.3",
     "typescript": "^5.5.4",
-    "vitest": "^2.0.5"
+    "vitest": "^2.0.5",
+    "wrangler": "^3.70.0"
   }
 }

@@ -1,0 +1,27 @@
+name = "repo-api"
+main = "src/index.ts"
+compatibility_date = "2024-08-12"
+minify = true
+
+[dev]
+port = 5001
+
+# [vars]
+# MY_VAR = "my-variable"
+
+# [[kv_namespaces]]
+# binding = "MY_KV_NAMESPACE"
+# id = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+
+# [[r2_buckets]]
+# binding = "MY_BUCKET"
+# bucket_name = "my-bucket"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "repo-db"
+database_id = ""
+migrations_dir = "./drizzle"
+
+# [ai]
+# binding = "AI"
