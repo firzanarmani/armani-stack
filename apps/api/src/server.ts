@@ -16,7 +16,7 @@ export const createServer = () => {
       });
 
       if (name)
-        return c.json({ message: `Welcome back ${c.req.param("name")}` });
+        return c.json({ message: `Welcome back ${c.req.param("name")}.` });
 
       try {
         const newName = await db
@@ -25,11 +25,11 @@ export const createServer = () => {
           .returning();
 
         return c.json({
-          message: `Hello ${newName[0].name}. You've been added to our database at ${new Date(newName[0].createdAt).toLocaleString()}`,
+          message: `Hello ${newName[0].name}.`,
         });
       } catch (error) {
         return c.json({
-          message: `Unable to create a new user named ${c.req.param("name")}`,
+          message: `Unable to create a new user named ${c.req.param("name")}.`,
         });
       }
     })

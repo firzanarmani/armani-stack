@@ -1,5 +1,5 @@
+import { type CfBindings } from "./cloudflare";
+
 export interface HonoAppType {
-  Bindings: {
-    DB: D1Database;
-  };
+  Bindings: CfBindings;
 }
