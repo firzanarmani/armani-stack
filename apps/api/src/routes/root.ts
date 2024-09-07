@@ -30,5 +30,9 @@ export const RootRouter = new Hono<HonoAppType>()
     }
   })
   .get("/status", (c) => {
-    return c.json({ ok: true });
+    return c.json({
+      ok: true,
+      publicKey: c.env.SOME_PUBLIC_KEY,
+      secretKey: c.env.SOME_SECRET_KEY,
+    });
   });
