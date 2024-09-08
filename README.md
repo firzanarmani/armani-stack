@@ -54,7 +54,7 @@ This Turborepo includes the following packages and apps:
 ### Apps and Packages
 
 - `api`: a [Hono](https://hono.dev/) server framework app, that uses Drizzle ORM, provides a nice RPC to the client apps, and deploys to Cloudflare
-- `admin`: a [Vite](https://vitejs.dev/) single page app, that uses TanStack Router and TanStack Query
+- `website`: a [Vite](https://vitejs.dev/) single page app, that uses TanStack Router and TanStack Query
 - `@repo/config-eslint`: ESLint configurations used throughout the monorepo
 - `@repo/config-typescript`: tsconfig.json's used throughout the monorepo
 - `@repo/logger`: isomorphic logger (a small wrapper around console.log)

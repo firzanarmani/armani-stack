@@ -25,7 +25,7 @@ function Index(): JSX.Element {
   return (
     <div className={container({ padding: "10" })}>
       <h1 className={css({ fontSize: "5xl", fontWeight: "bold", margin: "0" })}>
-        Admin <br />
+        Website <br />
         <span
           className={css({
             display: "inline-block",
