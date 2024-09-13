@@ -12,6 +12,5 @@ server/dist
 public/dist
 
 ## Panda
-styled-system
-styled-system-studio
+packages/styled-system/*
 !packages/styled-system/package.json
