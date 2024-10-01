@@ -37,15 +37,30 @@ pnpm run dev
  
 ### Deploying to production
 
+#### API (Cloudflare Workers)
+
 Before deploying to production, you will need to
 1.  ensure that the `database_id` (in `apps/api/wrangler.toml`) has been set using the database ID generated from setting up a D1 database on Cloudflare
 2.  set the following in `apps/api/drizzle.config.ts`:
     - `accountId` - Cloudflare dashboard > Workers & Pages > Overview
     - `databaseId` - Cloudflare dashboard > Workers & Pages > D1 > \<Your Project Database>
     - `token` - Cloudflare dashboard > My Profile (Top-Right user menu) > API Tokens
-3.
 
 > Using secrets? You'll need to set the secrets in production on your Cloudflare Worker project's configuration (refer [https://developers.cloudflare.com/workers/configuration/environment-variables/#add-environment-variables-via-the-dashboard](here)). Keep in mind that in local development, secrets are only declared in `.dev.vars` but not in `wrangler.toml`
+
+Then, run:
+```sh
+pnpm run deploy
+```
+
+If you need to apply the database migrations to the production database, run:
+```sh
+pnpm run db:migrate --remote
+```
+
+#### Website (Cloudflare Pages)
+
+The Vite React application is expected to be deployed to Cloudflare pages. To deploy to production, follow the steps [here](https://developers.cloudflare.com/pages/framework-guides/deploy-a-vite3-project/)
 
 ## What's inside?
 
