@@ -1,0 +1,6 @@
+name = "repo-website"
+compatibility_date = "2024-10-02"
+pages_build_output_dir = "./dist"
+
+[dev]
+port = 3001
