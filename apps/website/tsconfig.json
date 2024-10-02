@@ -1,16 +1,9 @@
 {
-  "exclude": ["node_modules"],
   "extends": "@repo/typescript-config/vite.json",
   "compilerOptions": {
     "rootDir": ".",
     "outDir": "dist"
   },
-  "include": [
-    "src",
-    "../../packages/styled-system",
-    "vite-env.d.ts",
-    "vite.config.ts",
-    "panda.config.ts",
-    "postcss.config.cjs"
-  ]
+  "exclude": ["node_modules"],
+  "include": [".", "../../packages/styled-system"]
 }
